@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://avicndugu.github.io/al-folio/sitemap.xml
+Sitemap: https://goutham-atwork.github.io/al-folio/sitemap.xml
