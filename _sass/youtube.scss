@@ -1,0 +1,24 @@
+.youtube-row { 
+    display: grid; 
+    grid-gap: 20px;
+    margin-bottom: 40px;
+
+    .title {
+        font-weight: 500;
+        font-size: 1.2em;
+        line-height: 1.5;
+    }
+}
+.youtube-container {
+    display: flex;
+    justify-content: center;
+}
+.youtube-container iframe {
+    aspect-ratio: 16 / 9;
+    width: 100% !important;
+}
+@media (min-width: 576px) {
+    .youtube-row {
+        grid-template-columns: 1fr 1fr;
+    }
+}
