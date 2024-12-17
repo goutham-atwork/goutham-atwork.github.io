@@ -15,7 +15,7 @@ nav_order: 1
 
 %***
 
-## Working Papers
+### Working Papers
 
 <div class="publications">
 {% bibliography -f {{ site.scholar.bibliography }} -q @*[status=working]* %}
