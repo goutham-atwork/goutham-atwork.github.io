@@ -4,7 +4,7 @@ permalink: /jmp/
 title: Job Market Paper
 nav: true
 nav_order: 1
-published:false
+published: false
 ---
 
 <!-- _pages/publications.md -->

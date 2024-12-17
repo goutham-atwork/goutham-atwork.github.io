@@ -676,3 +676,189 @@ The theme is available as open source under the terms of the [MIT License](https
 
 Originally, **al-folio** was based on the [\*folio theme](https://github.com/bogoli/-folio) (published by [Lia Bogoev](https://liabogoev.com) and under the MIT license).
 Since then, it got a full re-write of the styles and many additional cool features.
+
+<br>
+
+# 16th December 2024 Documentation Addition/ Update
+
+> You can also get a PDF version of this update on the `/assets/pdf/Portfolio_Documentation.pdf` folder.
+
+
+## A. Remove page from the tab list but keep it published
+
+1. go to `_pages/` folder. Click on the page you want to remove from the tabs list but keep the page published. Change `nav` from true to false:
+
+```yaml
+nav: false
+```
+
+## B. Remove page completely from the published pages.
+
+1. go to `_pages/` folder. 
+2. Option 1: Select the file for the page you want to remove and delete it. 
+3. Option 2: Open the file for the page you want to remove. Add the following line to the frontmatter: `published: false` This will hide the page from published pages by turning it into draft. This is how your frontmatter would appear after this new addition.
+
+```yaml
+---
+layout: page
+title: Talks
+permalink: /discussions/
+nav: true
+nav_order: 2
+# display_categories: [work, fun]
+horizontal: false
+published: false
+---
+```
+
+## C. Add YouTube video to a page
+
+To add a YouTube video, you need to use this shortcode:
+
+```ruby
+{% include youtube.html link="" title="" %}
+```
+
+The link is the embed link provided by YouTube. The title is the preferred text that will appear next to the video. Here is an example of what that looks like.
+
+```ruby
+{% include youtube.html link="https://www.youtube.com/embed/Msd1-vNWiu8" title="Deep Learning and Macro-Finance PART 1: Introductions to Neural Networks" %}
+```
+
+To get the embed link from Youtube, follow the instructions below:
+
+1. Visit the Youtube video you want to use and click the share button:
+
+![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f1f15f25-8da5-47e6-84c9-92432f041abb/b799c8e4-4f88-4b95-8e02-903c5368fffe/image.png)
+
+2. Click on the `embed` option.
+
+![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f1f15f25-8da5-47e6-84c9-92432f041abb/b1d796b7-2bad-46b5-bda9-e9f5f4aae974/image.png)
+
+3. The copy the `src` value inside the quotes. 
+
+![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f1f15f25-8da5-47e6-84c9-92432f041abb/0d9283ed-0c74-468c-9a80-3e3502e33869/image.png)
+
+4. That is the embed link you need to add the YouTube Video to your website.
+
+## D. Use a different page title other than the default title
+
+This is useful when you want to have different text value for the page title and page tab list text.
+
+First start by hiding the default title on a page:
+
+1. Visit, the `_pages/` folder.  
+2. Open the page you want to hide its title.
+3. Add `hidetitle: true` to the front matter. Example:
+
+```yaml
+---
+layout: page
+title: Research
+hidetitle: true
+permalink: /research/
+nav: true
+nav_order: 1
+---
+```
+
+Then, to add your preferred title, use markdown to add the title. The first two options are  the most preferred but you can use any of them. Their sizes decrease as you go down.
+
+```markdown
+# Main Heading
+
+## Sub Heading
+
+### Sub Sub Heading
+
+#### Sub Sub Sub Heading
+```
+
+## E. Adding a Horizontal Separation Line
+
+You can use markdown to add a horizontal separation line between sections.
+Use `***` (3 stars) to add a horizontal separation line between sections.
+
+## F. Display a full list of Papers
+
+```ruby
+<div class="publications">
+{% bibliography -f {{ site.scholar.bibliography }} %}
+</div>
+```
+
+## G. Display a list of published papers only
+
+```ruby
+<div class="publications">
+{% bibliography -f {{ site.scholar.bibliography }} -q @*[status=published]* %}
+</div>
+```
+
+## H. Display a list of working papers only
+
+```ruby
+<div class="publications">
+{% bibliography -f {{ site.scholar.bibliography }} -q @*[status=working]* %}
+</div>
+```
+
+To set the status of a paper as either `published` or working, go to the `_bibliography/` folder.
+
+Open the `papers.bib` file.
+
+Add the status value. For published: `status={published},` and working: `status={working},`.
+
+Example:
+
+```yaml
+@article{pricing,
+	abbr={4},
+	title={Asset Pricing, Participation Constraints, and Inequality},
+	author={Goutham Gopalakrishna, and Zhouzhou Gu, and Jonathan Payne},
+	abstract={How do asset returns interact with wealth inequality? Empirical evidence shows that portfolio choices and financial constraints lead to unequal risk exposure across households and financial intermediaries. To understand the dynamic general equilibrium implications, we build a macroeconomic model with heterogeneous households, a financial sector, asset market participation constraints, and endogenous asset price volatility.
+    We develop a new deep learning methodology for characterizing global solutions to this class of macro-finance models. We show that wealth inequality, financial sector recovery, and asset price dynamics depends on which households are able to purchase assets during crisis. This means the government faces a trade-off between tighter leverage constraints and a more equal recovery. In our calibrated model, asset returns and participation constraints account for a large fraction of the change in wealth inequality over the past half-century.},
+	year={2024},
+	pdf={paper_GGP.pdf},
+	dimensions={true},
+	selected={true},
+	status={published},
+}
+```
+
+# I. Website Publishing Issue
+
+## Error Message
+
+```yaml
+The current runner (ubuntu-24.04-x64) was detected as self-hosted because the platform does not match a GitHub-hosted runner image (or that image is deprecated and no longer supported).
+In such a case, you should install Ruby in the $RUNNER_TOOL_CACHE yourself, for example using
+
+https://github.com/rbenv/ruby-build
+
+You can take inspiration from this workflow for more details:
+
+https://github.com/ruby/ruby-builder/blob/master/.github/workflows/build.yml
+
+$ ruby-build 3.1.4 /opt/hostedtoolcache/Ruby/3.1.4/x64
+Once that completes successfully, mark it as complete with:
+$ touch /opt/hostedtoolcache/Ruby/3.1.4/x64.complete
+It is your responsibility to ensure installing Ruby like that is not done in parallel.
+
+ubuntu-latest pipelines will use ubuntu-24.04 soon. For more details, see https://github.com/actions/runner-images/issues/10636
+```
+
+The issue was due to Github updating to using Ubuntu 24.04 by default instead of using Ubuntu 22.04. This meant that some things had to be updated.
+
+The fix:
+
+1. Use a newer version of Ruby.
+2. Use the Ruby action that checks for the latest version instead of using a fix version generated by Github Pages
+3. Adding Imagemagick which is not available by default to Ubuntu 24.04(your project is dependent on Imagemagick)
+
+Check the file in `.github/workflows/jekyll.yml` for more details.
+
+## Additional Useful Information
+
+Jekyll uses markdown to allow you to format content on a page. To learn the basics of Markdown, visit: https://www.markdownguide.org/basic-syntax/. Trust me, it will help with updating content on you page.
+
