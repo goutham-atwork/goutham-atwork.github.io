@@ -684,7 +684,8 @@ Since then, it got a full re-write of the styles and many additional cool featur
 > You can also get a PDF version of this update on the `/assets/pdf/Portfolio_Documentation.pdf` folder.
 
 
-## A. Remove page from the tab list but keep it published
+
+# A. Remove page from the tab list but keep it published
 
 1. go to `_pages/` folder. Click on the page you want to remove from the tabs list but keep the page published. Change `nav` from true to false:
 
@@ -692,7 +693,7 @@ Since then, it got a full re-write of the styles and many additional cool featur
 nav: false
 ```
 
-## B. Remove page completely from the published pages.
+# B. Remove page completely from the published pages.
 
 1. go to `_pages/` folder. 
 2. Option 1: Select the file for the page you want to remove and delete it. 
@@ -711,7 +712,7 @@ published: false
 ---
 ```
 
-## C. Add YouTube video to a page
+# C. Add YouTube video to a page
 
 To add a YouTube video, you need to use this shortcode:
 
@@ -722,7 +723,12 @@ To add a YouTube video, you need to use this shortcode:
 The link is the embed link provided by YouTube. The title is the preferred text that will appear next to the video. Here is an example of what that looks like.
 
 ```ruby
-{% include youtube.html link="https://www.youtube.com/embed/Msd1-vNWiu8" title="Deep Learning and Macro-Finance PART 1: Introductions to Neural Networks" %}
+{% 
+		include 
+		youtube.html 
+		link="https://www.youtube.com/embed/Msd1-vNWiu8" 
+		title="Deep Learning and Macro-Finance PART 1: Introductions to Neural Networks" 
+%}
 ```
 
 To get the embed link from Youtube, follow the instructions below:
@@ -731,17 +737,17 @@ To get the embed link from Youtube, follow the instructions below:
 
 ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f1f15f25-8da5-47e6-84c9-92432f041abb/b799c8e4-4f88-4b95-8e02-903c5368fffe/image.png)
 
-2. Click on the `embed` option.
+1. Click on the `embed` option.
 
 ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f1f15f25-8da5-47e6-84c9-92432f041abb/b1d796b7-2bad-46b5-bda9-e9f5f4aae974/image.png)
 
-3. The copy the `src` value inside the quotes. 
+1. The copy the `src` value inside the quotes. 
 
 ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f1f15f25-8da5-47e6-84c9-92432f041abb/0d9283ed-0c74-468c-9a80-3e3502e33869/image.png)
 
-4. That is the embed link you need to add the YouTube Video to your website.
+1. That is the embed link you need to add the YouTube Video to your website.
 
-## D. Use a different page title other than the default title
+# D. Use a different page title other than the default title
 
 This is useful when you want to have different text value for the page title and page tab list text.
 
@@ -774,12 +780,17 @@ Then, to add your preferred title, use markdown to add the title. The first two 
 #### Sub Sub Sub Heading
 ```
 
-## E. Adding a Horizontal Separation Line
+If you prefer to have the title with the same font size as the overall website text, use the bold instead:
 
-You can use markdown to add a horizontal separation line between sections.
-Use `***` (3 stars) to add a horizontal separation line between sections.
+```markdown
+**Main Heading With Same Font Size as Text**
+```
 
-## F. Display a full list of Papers
+# E. Adding a Horizontal Separation Line
+
+You can use markdown to add a horizontal separation line between sections. Use `***` (3 stars) to add a horizontal separation line between sections.
+
+# F. Display a full list of Papers
 
 ```ruby
 <div class="publications">
@@ -787,7 +798,7 @@ Use `***` (3 stars) to add a horizontal separation line between sections.
 </div>
 ```
 
-## G. Display a list of published papers only
+# G. Display a list of published papers only
 
 ```ruby
 <div class="publications">
@@ -795,7 +806,7 @@ Use `***` (3 stars) to add a horizontal separation line between sections.
 </div>
 ```
 
-## H. Display a list of working papers only
+# H. Display a list of working papers only
 
 ```ruby
 <div class="publications">
@@ -816,8 +827,7 @@ Example:
 	abbr={4},
 	title={Asset Pricing, Participation Constraints, and Inequality},
 	author={Goutham Gopalakrishna, and Zhouzhou Gu, and Jonathan Payne},
-	abstract={How do asset returns interact with wealth inequality? Empirical evidence shows that portfolio choices and financial constraints lead to unequal risk exposure across households and financial intermediaries. To understand the dynamic general equilibrium implications, we build a macroeconomic model with heterogeneous households, a financial sector, asset market participation constraints, and endogenous asset price volatility.
-    We develop a new deep learning methodology for characterizing global solutions to this class of macro-finance models. We show that wealth inequality, financial sector recovery, and asset price dynamics depends on which households are able to purchase assets during crisis. This means the government faces a trade-off between tighter leverage constraints and a more equal recovery. In our calibrated model, asset returns and participation constraints account for a large fraction of the change in wealth inequality over the past half-century.},
+	abstract={How do asset returns interact with wealth inequality?},
 	year={2024},
 	pdf={paper_GGP.pdf},
 	dimensions={true},
@@ -826,7 +836,40 @@ Example:
 }
 ```
 
-# I. Website Publishing Issue
+# I. Change Paper Numbers to Icon
+
+To change from text to icon add this line in `papers.bib`: 
+
+```latex
+icon={arrow.svg},
+```
+
+The whole block should be:
+
+```latex
+@article{network,
+	abbr={0},
+	title={Supply Chain Finance and Firm Capital Structure},
+	author={Goutham Gopalakrishna, and Laura Bottazzi, and Claudio Tebaldi},
+	abstract={We analyze a proprietary dataset of factoring transactions,
+	year={2022},
+	pdf={networkpaper.pdf},
+	dimensions={true},
+	selected={true},
+	status={working},
+  icon={arrow.svg},
+}
+```
+
+To use a different icon, add the icon to the folder `/assets/img/publication_preview/` the add the icon file name in `papers.bib` as show: `icon={new-icon-name.svg},`
+
+![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f1f15f25-8da5-47e6-84c9-92432f041abb/df074dc7-339f-4e38-88da-88cafaf50b48/image.png)
+
+![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f1f15f25-8da5-47e6-84c9-92432f041abb/525fd960-bcd3-43c3-8807-d7df471ff388/image.png)
+
+To return to using numbers, just remove the newly added icon line: `icon={arrow.svg},`
+
+# J. Website Publishing Issue
 
 ## Error Message
 
@@ -858,7 +901,6 @@ The fix:
 
 Check the file in `.github/workflows/jekyll.yml` for more details.
 
-## Additional Useful Information
+# Additional Useful Information
 
 Jekyll uses markdown to allow you to format content on a page. To learn the basics of Markdown, visit: https://www.markdownguide.org/basic-syntax/. Trust me, it will help with updating content on you page.
-
