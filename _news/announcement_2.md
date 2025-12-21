@@ -1,8 +1,11 @@
 ---
 layout: post
-date: 2024-09-03
+date: 2024-12-01
 inline: true
 related_posts: false
 ---
 
-My lecture on deep learning and macro-finance at the Princeton Initiative 2024 (video) is available [here](https://www.youtube.com/watch?v=Yuz7tcIyfY0&t=1123s)
+Updated paper "ALIENs for Continuous-Time Economies" that includes Kolmogorov Arnold Networks (KANs) can be found [here](https://goutham-atwork.github.io/assets/pdf/paper2.pdf).
+
+
+
