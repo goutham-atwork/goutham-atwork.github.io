@@ -12,7 +12,7 @@ nav_order: 1
 {% bibliography -f {{ site.scholar.bibliography }} -q @*[status=published]* %}
 </div>
 
-***
+
 
 ### Working Papers
 
