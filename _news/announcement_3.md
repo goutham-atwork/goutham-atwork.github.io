@@ -1,8 +1,8 @@
 ---
 layout: post
-date: 2024-09-03
+date: 2026-03-01
 inline: true
 related_posts: false
 ---
 
-My lecture on deep learning and macro-finance at the Princeton Initiative 2024 (video) is available [here](https://www.youtube.com/watch?v=Yuz7tcIyfY0&t=1123s)
+I'm co-organizing Macro,Money, and International Finance Conference in Rome on May 18-19 2026 [here](https://bcf.princeton.edu/events/macro-money-and-international-finance-conference/)
