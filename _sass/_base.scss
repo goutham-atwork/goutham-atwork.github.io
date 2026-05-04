@@ -582,7 +582,7 @@ footer.sticky-bottom {
     margin-top: 0;
 
     li {
-      margin-bottom: 1rem;
+      margin-bottom: 0.3rem;
 
       .preview {
         width: 100%;
@@ -592,7 +592,7 @@ footer.sticky-bottom {
 
       .abbr {
         height: 2rem;
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.2rem;
 
         abbr {
           display: inline-block;
@@ -664,7 +664,7 @@ footer.sticky-bottom {
       }
 
       .badges {
-        padding-bottom: 0.5rem;
+        padding-bottom: 0.2rem;
         span {
           display: inline-block;
           color: $black-color;
