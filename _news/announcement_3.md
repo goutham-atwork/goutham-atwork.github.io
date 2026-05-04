@@ -1,8 +1,8 @@
 ---
 layout: post
-date: 2026-03-01
+date: 2026-05-15
 inline: true
 related_posts: false
 ---
 
-I'm co-organizing Macro,Money, and International Finance Conference in Rome on May 18-19 2026 [here](https://bcf.princeton.edu/events/macro-money-and-international-finance-conference/)
+I will be teaching Deep Learing for Continuous Time Economic Models at the PKU-Zurich Ph.D. summer school [here](https://liboecon.com/2026_summer_school.html)

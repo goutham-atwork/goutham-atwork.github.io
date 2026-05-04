@@ -1,11 +1,8 @@
 ---
 layout: post
-date: 2025-12-21
+date: 2026-03-01
 inline: true
 related_posts: false
 ---
 
-Updated paper "Institutional Asset Pricing with Segmentation and Household Heterogeneity" can be found [here](https://goutham-atwork.github.io/assets/pdf/paper_GGP.pdf).
-
-
-
+I'm co-organizing Macro,Money, and International Finance Conference in Rome on May 18-19 2026 [here](https://bcf.princeton.edu/events/macro-money-and-international-finance-conference/)
