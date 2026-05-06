@@ -117,7 +117,7 @@
         {% assign proceedings = "inproceedings,incollection" | split: ','%}
         {% assign thesis = "thesis,mastersthesis,phdthesis" | split: ','%}
         {% if entry.type == "article" -%}
-          {%- capture entrytype -%}<em>{{entry.journal}}</em>{%- endcapture -%}
+          {%- capture entrytype -%}<em style="text-decoration: underline;">{{entry.journal}}</em>{%- endcapture -%}
         {%- elsif proceedings contains entry.type -%}
           {%- capture entrytype -%}<em>In {{entry.booktitle}}</em> {%- endcapture -%}
         {%- elsif thesis contains entry.type -%}
@@ -125,14 +125,42 @@
         {%- else -%}
           {%- capture entrytype -%}{%- endcapture -%}
         {%- endif -%}
-        {%- if entry.month -%}
-          {%- capture entrymonth -%}{{ " " }}{{ entry.month | capitalize }}{%- endcapture -%}
-        {%- endif -%}
-        {%- if entry.year -%}
-          {%- capture entryyear -%}{{ " " }}{{entry.year}}{%- endcapture -%}
-        {%- endif -%}
         {% assign entrytype_text = entrytype | strip_html | strip %}
-        {%- capture periodical -%}{{ entrytype }}{%- if entrytype_text != "" and entryyear != "" -%}, {%- endif -%}{{ entrymonth }}{{ entryyear }}{%- endcapture -%}
+
+        {% assign parts = "" | split: "" %}
+
+        {%- if entrytype_text != "" %}
+          {% assign parts = parts | push: entrytype %}
+        {%- endif %}
+
+        {%- if entry.volume %}
+          {% assign parts = parts | push: "Volume " | push: entry.volume %}
+        {%- endif %}
+
+        {%- if entry.issue %}
+          {% assign issue = "Issue " | append: entry.issue %}
+          {% assign parts = parts | push: issue %}
+        {%- endif %}
+
+        {% if entry.month %}
+          {% assign month = entry.month | capitalize %}
+          {% assign parts = parts | push: month %}
+        {%- endif %}
+
+        {%- if entry.year %}
+          {% assign parts = parts | push: entry.year %}
+        {%- endif %}
+
+        {%- if entry.pages %}
+          {% assign pages = "Pages " | append: entry.pages %}
+          {% assign parts = parts | push: pages %}
+        {%- endif %}
+
+        {% comment %} --- Final output --- {% endcomment %}
+        {%- capture periodical %}
+          {{ parts | join: ", " }}
+        {%- endcapture %}
+        
         <div class="periodical">
           {{ periodical | strip }}
         </div>
@@ -153,6 +181,12 @@
           {%- endif %}
           {%- if entry.html %}
             <a href="{{ entry.html }}" class="btn btn-sm z-depth-0" role="button">HTML</a>
+          {%- endif %}
+          {%- if entry.ssrn %}
+            <a href="{{ entry.ssrn }}" class="btn btn-sm z-depth-0" role="button">SSRN</a>
+          {%- endif %}
+          {%- if entry.journal_link %}
+            <a href="{{ entry.journal_link }}" class="btn btn-sm z-depth-0" role="button">JOURNAL</a>
           {%- endif %}
           {%- if entry.pdf %}
             {% if entry.pdf contains '://' -%}
