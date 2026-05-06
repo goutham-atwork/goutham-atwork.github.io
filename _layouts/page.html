@@ -14,6 +14,17 @@ layout: default
             {{ content }}
           </article>
 
+          {% if page.cv_pdf %}
+            <object 
+              data="{{ page.cv_pdf | relative_url }}" 
+              type="application/pdf" 
+              width="700" height="500"
+              style="width: 100%; height: 500px;"
+            >
+              <p>Your browser does not support PDFs. <a href="{{ page.cv_pdf | relative_url }}">Download the Curriculum Vitae</a>.</p>
+            </object>
+          {% endif %}
+
           {%- if page.related_publications != null and page.related_publications.size > 0 -%}
           {% assign publications = page.related_publications | replace: ", ", "," | split: "," | join: "|" %}
           <h2>References</h2>

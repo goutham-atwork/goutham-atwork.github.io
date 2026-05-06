@@ -6,5 +6,3 @@ nav: true
 nav_order: 5
 cv_pdf: "/files/CV.pdf"
 ---
-
-[Curriculum Vitae](/files/CV.pdf)
