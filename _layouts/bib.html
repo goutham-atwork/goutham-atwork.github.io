@@ -24,7 +24,7 @@
           {%- else -%}
             <abbr class="badge">
               {% if entry.icon %}
-              <img src="{{ entry.icon | default:'arrow.svg' | prepend: '/assets/img/publication_preview/' | relative_url }}" width="16px" height="16px">
+              <img src="{{ entry.icon | default:'arrow.svg' | prepend: '/assets/img/publication_preview/' | relative_url }}" width="16px" height="16px" alt="">
               {% else %}
               {{ entry.abbr }}
               {% endif %}
@@ -34,11 +34,13 @@
         </div>
 
         <!-- Entry bib key -->
-        <div id="{{entry.key}}" class="col-sm-8">
+        <div id="{{entry.key}}" class="col-sm-10">
+        <div>
         <!-- Title -->
-        <div class="title">{{entry.title}}</div>
+        <div class="title d-inline">{{entry.title}},</div>
         <!-- Author -->
-        <div class="author">
+        <div class="author d-inline">
+          <span> with </span>
         {% assign author_array_size = entry.author_array | size %}
 
         {% assign author_array_limit = author_array_size %}
@@ -111,6 +113,7 @@
           >{{more_authors_hide}}</span>
         {%- endif -%}
 
+        </div>
         </div>
 
         <!-- Journal/Book title and date -->
