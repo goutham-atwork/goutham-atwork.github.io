@@ -22,6 +22,27 @@ layout: default
           </div>
           {%- endif %}
 
+          {% if page.cv_pdf %}
+            <div id="pdf-viewer" style="height: 100vh"></div>
+ 
+            <script type="module">
+              import EmbedPDF from "{{ 'assets/js/embedpdf.js' | relative_url }}";
+              document.addEventListener("DOMContentLoaded", () => {
+                EmbedPDF.init({
+                  type: 'container',
+                  target: document.getElementById('pdf-viewer'),
+                  disabledCategories: [
+                    'annotation', 'form', 'redaction', 'panel-comment', 'panel-sidebar', 'insert',
+                    'document-open', 'document-close', 'document-print', 'document-capture',
+                    'document-protect'
+                  ],
+                  src: "{{ page.cv_pdf | relative_url }}",
+                  theme: { preference: 'system' },
+                });
+              });
+            </script>
+          {% endif %}
+
           {%- if site.giscus.repo and page.giscus_comments -%}
             {% include giscus.html %}
           {%- endif -%}

@@ -661,6 +661,13 @@ footer.sticky-bottom {
             border-color: var(--global-theme-color);
           }
         }
+        a.news {
+          color: var(--global-theme-color);
+          text-decoration: underline;
+          margin: 0 4px;
+          font-size: .875rem;
+          line-height: 1.5;
+        }
       }
 
       .badges {
