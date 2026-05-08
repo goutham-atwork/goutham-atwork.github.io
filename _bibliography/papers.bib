@@ -1,5 +1,16 @@
 ---
 ---
+@article{elasticity,
+	abbr={5},
+	title={Dissecting the Aggregate Market Elasticity},
+	author={Victor Duarte, and Mahyar Kargar, and Jiacui Li, and Dejanir Silva},
+	abstract={We study aggregate stock market elasticity in a general equilibrium model with heterogeneous investors, passive demand, and financial constraints. Without frictions, aggregate elasticity for the endowment claim is infinite, as interest rate and risk premium responses offset each other. With frictions, price impact for the endowment claim remains modest (about 0.7 in our calibration). In contrast, the equity (dividend) claim exhibits large price impact (above 8), consistent with empirical evidence, as frictions dampen interest rate responses while leverage amplifies risk premium responses to portfolio flows. We introduce a state-global perturbation method that yields closed-form, state-dependent elasticities. Solving the model with deep neural networks and calibrating to Flow of Funds data, we simultaneously match the equity premium and return volatility as well as the level and countercyclical dynamics of price impact.},
+	pdf={DissectingAggregateElasticity.pdf},
+	dimensions={true},
+	selected={true},
+	status={working},
+}
+
 
 @article{pricing,
 	abbr={4},
@@ -13,19 +24,37 @@
 	status={working},
 }
 
-@article{elasticity,
-	abbr={5},
-	title={Dissecting the Aggregate Market Elasticity},
-	author={Victor Duarte, and Mahyar Kargar, and Jiacui Li, and Dejanir Silva},
-	abstract={We study aggregate stock market elasticity in a general equilibrium model with heterogeneous investors, passive demand, and financial constraints. Without frictions, aggregate elasticity for the endowment claim is infinite, as interest rate and risk premium responses offset each other. With frictions, price impact for the endowment claim remains modest (about 0.7 in our calibration). In contrast, the equity (dividend) claim exhibits large price impact (above 8), consistent with empirical evidence, as frictions dampen interest rate responses while leverage amplifies risk premium responses to portfolio flows. We introduce a state-global perturbation method that yields closed-form, state-dependent elasticities. Solving the model with deep neural networks and calibrating to Flow of Funds data, we simultaneously match the equity premium and return volatility as well as the level and countercyclical dynamics of price impact.},
-	pdf={DissectingAggregateElasticity.pdf},
+
+
+@article{aliens,
+  abbr={3},
+  title={ALIENs for Continuous Time Economies},
+  author={Yuntao Wu},
+  abstract={This paper builds ALIENs (Active Learning Inspired Equilibrium Nets), that extend deep-learning methods for solving continuous-time equilibrium models with high-dimensional states, aggregate shocks, and nonlinear dynamics. The approach combines time-stepping with active learning to turn nonlinear problems into sequences of contraction mappings, improving stability and convergence. By focusing computation on economically important regions of the state space, ALIENs increase accuracy and efficiency. The method is validated across applications ranging from heterogeneous-agent models with free boundaries to high-dimensional asset-pricing models. Additionally, the paper introduces Deep-Macrofin+, a numerical library that facilitates the implementation of these techniques for researchers.},
+  pdf={paper2.pdf},
+  dimensions={true},
+  status={working},
+}
+
+@article{macrofinancemodel,
+	abbr={2},
+	title={A Macro-Finance model with Realistic Crisis Dynamics},
+	abstract={Financial recessions are typically characterized by a large risk premium and a slow recovery. However, macro-finance models have trouble quantitatively explaining these empirical features, especially when they are calibrated to simultaneously match both the observed unconditional and conditional macroeconomic and asset pricing moments. In this paper, I build a macro-finance model that quantitatively explains the salient features of a financial crisis, such as a large drop in output, a spike in the risk premium, reduced financial intermediation, and a long duration of economic distress. The model has leveraged intermediaries with stochastic productivity and a state-dependent exit rate that governs the transition into and out of a crisis. A model without these two features suffers from a trade-off between the amplification and persistence of crisis. I show that my model resolves this tension and generates realistic crisis dynamics.},
+	pdf={jmp.pdf},
+	dimensions={true},
+	status={working},
+}
+
+@article{network,
+	abbr={1},
+	title={Supply Chain Finance and Firm Capital Structure},
+	author={Laura Bottazzi, and Claudio Tebaldi},
+	abstract={We analyze a proprietary dataset of factoring transactions, where a financial intermediary, a factor, provides capital to support customers-supplier trade-credit transactions. At the empirical level, we characterize distinctive features that correlate customer and supplier capital structure determinants with the intensity of observed factoring transactions. Our key finding is that the characteristics of the production-related supply-chain network and downstream competition simultaneously shape the inter-firm trade- and bank-related debt chains and the firm-specific corporate financial policies. To match this evidence, we develop a structural model where the intensity of usage of factoring services is endogenously determined, jointly with the capital structures of the bank, the supplier, and the customer.},
+	pdf={networkpaper.pdf},
 	dimensions={true},
 	selected={true},
 	status={working},
 }
-
-
-
 
 @article{heterogeneousbeliefs,
   abbr={1},
@@ -45,34 +74,4 @@
     "Globe and Mail|https://www.theglobeandmail.com/investing/personal-finance/article-are-optimists-better-investors-maybe-not/?utm_medium=email&utm_source=On%20Money&utm_content=2026-3-17_19&utm_term=Are%20optimists%20better%20investors%3F%20Maybe%20not&utm_campaign=newsletter&cu_id=To20cxPCbntxId7xeHMJz7A0j53QMPnh";
     "Podcast|https://www.youtube.com/watch?v=Ay2XdqQ_lnM";
   },
-}
-
-@article{aliens,
-  abbr={2},
-  title={ALIENs for Continuous Time Economies},
-  author={Yuntao Wu},
-  abstract={This paper builds ALIENs (Active Learning Inspired Equilibrium Nets), that extend deep-learning methods for solving continuous-time equilibrium models with high-dimensional states, aggregate shocks, and nonlinear dynamics. The approach combines time-stepping with active learning to turn nonlinear problems into sequences of contraction mappings, improving stability and convergence. By focusing computation on economically important regions of the state space, ALIENs increase accuracy and efficiency. The method is validated across applications ranging from heterogeneous-agent models with free boundaries to high-dimensional asset-pricing models. Additionally, the paper introduces Deep-Macrofin+, a numerical library that facilitates the implementation of these techniques for researchers.},
-  pdf={paper2.pdf},
-  dimensions={true},
-  status={working},
-}
-
-@article{macrofinancemodel,
-	abbr={1},
-	title={A Macro-Finance model with Realistic Crisis Dynamics},
-	abstract={Financial recessions are typically characterized by a large risk premium and a slow recovery. However, macro-finance models have trouble quantitatively explaining these empirical features, especially when they are calibrated to simultaneously match both the observed unconditional and conditional macroeconomic and asset pricing moments. In this paper, I build a macro-finance model that quantitatively explains the salient features of a financial crisis, such as a large drop in output, a spike in the risk premium, reduced financial intermediation, and a long duration of economic distress. The model has leveraged intermediaries with stochastic productivity and a state-dependent exit rate that governs the transition into and out of a crisis. A model without these two features suffers from a trade-off between the amplification and persistence of crisis. I show that my model resolves this tension and generates realistic crisis dynamics.},
-	pdf={jmp.pdf},
-	dimensions={true},
-	status={working},
-}
-
-@article{network,
-	abbr={0},
-	title={Supply Chain Finance and Firm Capital Structure},
-	author={Laura Bottazzi, and Claudio Tebaldi},
-	abstract={We analyze a proprietary dataset of factoring transactions, where a financial intermediary, a factor, provides capital to support customers-supplier trade-credit transactions. At the empirical level, we characterize distinctive features that correlate customer and supplier capital structure determinants with the intensity of observed factoring transactions. Our key finding is that the characteristics of the production-related supply-chain network and downstream competition simultaneously shape the inter-firm trade- and bank-related debt chains and the firm-specific corporate financial policies. To match this evidence, we develop a structural model where the intensity of usage of factoring services is endogenously determined, jointly with the capital structures of the bank, the supplier, and the customer.},
-	pdf={networkpaper.pdf},
-	dimensions={true},
-	selected={true},
-	status={working},
 }
