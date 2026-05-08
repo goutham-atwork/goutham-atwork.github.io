@@ -908,7 +908,7 @@ Jekyll uses markdown to allow you to format content on a page. To learn the basi
 
 # May 2026 Documentation Addition/ Update
 
-
+## Research Page
 1. I've updated the papers to match the picture you attached. To add the additional details, use:
 
 ```
@@ -918,10 +918,15 @@ issue = {10},
 pages = {777--780},
 ssrn = {https://link.aps.org/doi/10.1103/PhysRev.47.777},
 journal_link = {https://journals.aps.org/pr/abstract/10.1103/PhysRev.47.777},
-
+links={
+  "WSJ|https://example.com/paper.pdf";
+  "Financial Times|https://github.com/example/repo";
+},
 ```
 
 Here is an example with all the details:
+
+
 
 ```
 @article{heterogeneousbeliefs,
@@ -931,7 +936,7 @@ Here is an example with all the details:
   volume = {47},
   issue = {10},
   pages = {777--780},
-  author={Goutham Gopalakrishna, and Seung Joo Lee, and Theofanis Papamichalis},
+  author={Seung Joo Lee, and Theofanis Papamichalis},
   abstract={We develop a tractable framework to explore how beliefs about long-term economic growth shape macroeconomic and financial stability. By modeling belief distortions among productive capital users, we provide an analytical characterization of a novel phenomenon termed the “net worth trap”, where overly optimistic or pessimistic beliefs of productive agents prevent them from rebuilding wealth, causing permanent inefficiencies. A procyclical swing in beliefs reduces or exacerbates the instability, indicating that the type of belief when the economy is vulnerable has important con- sequences on financial stability and macroeconomic dynamics.},
   year={2024},
   pdf={paper4.pdf},
@@ -940,6 +945,10 @@ Here is an example with all the details:
   dimensions={true},
   selected={true},
   status={published},
+  links={
+    "WSJ|https://example.com/paper.pdf";
+    "Financial Times|https://github.com/example/repo";
+  },
   icon={arrow.svg},
 }
 ```
@@ -948,3 +957,14 @@ Here is an example with all the details:
 3. The speed and the "abs" bugs has been resolved.
 4. . 2 of the 3 services generating the images on the repositories page are no longer operational hence the broken images. I've found suitable alternatives.
 5. The CV can now be read on the page without having to download.
+6. To remove the icon, and use the number, remove the `icon={arrow.svg}` on each paper.
+7. You can add any number of links on each papaer by using the format `"link text|url";`:
+
+```
+links={
+    "Link text 1|https://example1.com/";
+    "Link text 2|https://example2.com/";
+    "Link text 3|https://example3.com/";
+    "Link text 4|https://example4.com/";
+},
+```
