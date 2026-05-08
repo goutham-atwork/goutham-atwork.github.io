@@ -36,18 +36,19 @@
         <!-- Entry bib key -->
         <div id="{{entry.key}}" class="col-sm-10">
         <div>
+        {%- assign author_array_size = entry.author_array | size -%}
         <!-- Title -->
-        <div class="title d-inline">{{entry.title}},</div>
+        <div class="title d-inline">
+          {{entry.title}}
+          {%- if author_array_size > 0 %}, {%- endif -%}
+        </div>
         <!-- Author -->
         <div class="author d-inline">
-          <span> with </span>
-        {% assign author_array_size = entry.author_array | size %}
-
         {% assign author_array_limit = author_array_size %}
         {%- if site.max_author_limit and author_array_size > site.max_author_limit %}
           {% assign author_array_limit = site.max_author_limit %}
         {% endif %}
-
+        {%- assign co_author_counter = 0 -%}
         {%- for author in entry.author_array limit: author_array_limit -%}
           {%- assign author_is_self = false -%}
           {%- assign author_last_name = author.last | remove: "¶" | remove: "&" | remove: "*" | remove: "†" | remove: "^" -%}
@@ -71,8 +72,13 @@
             {%- if forloop.last and author_array_limit == author_array_size -%}and&nbsp;{%- endif -%}
           {%- endif -%}
           {%- if author_is_self -%}
-            <em>{{author.first}} {{author.last}}</em>
+            <span>{{author.first}} {{author.last}}</span>
+            {%- assign co_author_counter = co_author_counter | plus: 1 -%}
           {%- else -%}
+            {%- if co_author_counter == 0 -%}
+              <span> with </span>
+            {%- endif -%}
+            {%- assign co_author_counter = co_author_counter | plus: 1 -%}
             {%- if coauthor_url -%}
               <a href="{{coauthor_url}}">{{author.first}} {{author.last}}</a>
             {%- else -%}
@@ -89,30 +95,42 @@
           {%- endif -%}
           {%- assign more_authors_show = '' -%}
           {%- for author in entry.author_array offset: author_array_limit -%}
-            {%- assign more_authors_show = more_authors_show | append: author.first | append: " " | append: author.last -%}
+            {%- assign author_last_name = author.last | remove: "¶" | remove: "&" | remove: "*" | remove: "†" | remove: "^" -%}
+            {%- assign coauthor_url = nil -%}
+            {%- if site.data.coauthors[author_last_name] -%}
+              {%- for coauthor in site.data.coauthors[author_last_name] -%}
+                {%- if coauthor.firstname contains author.first -%}
+                  {%- assign coauthor_url = coauthor.url -%}
+                  {%- break -%}
+                {%- endif -%}
+              {%- endfor -%}
+            {%- endif -%}
+
+            {%- capture author_name -%}
+              {{ author.first }} {{ author.last }}
+            {%- endcapture -%}
+
+            {%- if coauthor_url -%}
+              {%- capture author_html -%}
+                <a href="{{ coauthor_url }}">{{ author_name }}</a>
+              {%- endcapture -%}
+            {%- else -%}
+              {%- assign author_html = author_name -%}
+            {%- endif -%}
+
+            {%- assign more_authors_show = more_authors_show | append: author_html -%}
+
             {%- unless forloop.last -%}
               {%- assign more_authors_show = more_authors_show | append: ", " -%}
             {%- endunless -%}
           {%- endfor -%}
           , and
           <span
-              class="more-authors"
-              title="click to view {{more_authors_hide}}"
-              onclick="
-                var element = $(this);
-                element.attr('title', '');
-                var more_authors_text = element.text() == '{{more_authors_hide}}' ? '{{more_authors_show}}' : '{{more_authors_hide}}';
-                var cursorPosition = 0;
-                var textAdder = setInterval(function(){
-                  element.text(more_authors_text.substring(0, cursorPosition + 1));
-                  if (++cursorPosition == more_authors_text.length){
-                    clearInterval(textAdder);
-                  }
-              }, '{{site.more_authors_animation_delay}}');
-              "
-          >{{more_authors_hide}}</span>
+            class="more-authors"
+            title="click to view {{ more_authors_hide }}"
+            onclick="this.innerHTML = (this.innerHTML.trim() == '{{ more_authors_hide }}') ? decodeURIComponent('{{ more_authors_show | uri_escape }}') : '{{ more_authors_hide }}';"
+          >{{ more_authors_hide }}</span>
         {%- endif -%}
-
         </div>
         </div>
 
@@ -228,6 +246,17 @@
           {%- if entry.website %}
             <a href="{{ entry.website }}" class="btn btn-sm z-depth-0" role="button">Website</a>
           {%- endif %}
+          {% if entry.links %}
+            {% assign links = entry.links | split: ';' %}
+            <div class="links d-inline">
+              {% for item in links %}
+                {% assign parts = item | split: '|' %}
+                {% assign text = parts[0] | remove: '"' | strip %}
+                {% assign url = parts[1] | remove: '"' | strip %}
+                <a href="{{ url }}" class="news">{{ text }}</a>
+              {% endfor %}
+            </div>
+          {% endif %}
           </div>
           {% if site.badges %}
           <div class="badges">
