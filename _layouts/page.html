@@ -26,7 +26,7 @@ layout: default
             <div id="pdf-viewer" style="height: 100vh"></div>
  
             <script type="module">
-              import EmbedPDF from '/assets/js/embedpdf.js';
+              import EmbedPDF from "{{ 'assets/js/embedpdf.js' | relative_url }}";
               document.addEventListener("DOMContentLoaded", () => {
                 EmbedPDF.init({
                   type: 'container',
