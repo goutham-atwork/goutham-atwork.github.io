@@ -1,11 +1,8 @@
 ---
 layout: post
-date: 2025-12-21
+date: 2026-05-15
 inline: true
 related_posts: false
 ---
 
-Updated paper "Institutional Asset Pricing with Segmentation and Household Heterogeneity" can be found [here](https://goutham-atwork.github.io/assets/pdf/paper_GGP.pdf).
-
-
-
+I will give a lecture on Deep Learning for Macrofinance at the [Princeton Initiative 2026](https://initiative.princeton.edu/programs/2026-program/).
