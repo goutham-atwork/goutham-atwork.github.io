@@ -19,6 +19,15 @@ strong {
   color: var(--global-text-color);
 }
 
+body {
+  font-weight: 400;
+}
+
+.institution {
+  color: var(--global-institution-color);
+  font-weight: 500;
+}
+
 hr {
   border-top: 1px solid var(--global-divider-color);
 }
