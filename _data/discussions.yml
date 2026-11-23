@@ -1,0 +1,97 @@
+# Paper discussions, listed on the Talks page in this order (newest first).
+#
+#   venue:   conference name
+#   year:    year of the discussion
+#   title:   title of the discussed paper (without quotes)
+#   authors: authors of the discussed paper
+#   slides:  file name of the slides in assets/pdf/discussions/ (leave empty to hide the link)
+
+- venue: Conference on Financial Economics and Accounting (CFEA)
+  year: 2026
+  title: "Digital Safe Havens: The Economics of Tokenized Treasuries"
+  authors: Chen Lin, Eswar Prasad, Daniel Rabetti, and Che Zhang
+  slides: 2026-11-CFEA.pdf
+
+- venue: ASU Sonoran Winter Finance Conference
+  year: 2026
+  title: Insuring Climate Risks in Integrated Markets
+  authors: Deeksha Gupta, Michael Sockin, and Jan Starmans
+  slides: 2026-02-ASU-Sonoran.pdf
+
+- venue: COAP Luxembourg
+  year: 2025
+  title: Production-Based Payout Policies
+  authors: Ivan Alfaro, Alessandro Graniero, and Kevin Schneider
+  slides: 2025-07-COAP.pdf
+
+- venue: Eastern Finance Association
+  year: 2025
+  title: Intangible Investment, Displacement Risk, and the Value Discount
+  authors: Maziar Kazemi
+  slides: 2025-04-EasternFinance.pdf
+
+- venue: Paris December Finance Meeting
+  year: 2024
+  title: Commodity Tails and Bond Risk Premia
+  authors: Stefanie Schraeder, Yuanzhi Wang, and Qunzi Zhang
+  slides: 2024-12-ParisDecember.pdf
+
+- venue: Northern Finance Association (NFA)
+  year: 2024
+  title: Monetary Policy in the Age of Universal Banking
+  authors: Michael Gelman, Itay Goldstein, and Andrew MacKinlay
+  slides: 2024-09-NFA-1.pdf
+
+- venue: Northern Finance Association (NFA)
+  year: 2024
+  title: Excess Volatility and Mispricing in the Presence of Sentiment and Institutional Investors
+  authors: Luis Goncalves-Pinto, Hervé Roche, and Juan Sotes-Paladino
+  slides: 2024-09-NFA-2.pdf
+
+- venue: CICM Hong Kong
+  year: 2024
+  title: Knowledge Network and Asset Pricing
+  authors: Po-Hsuan Hsu, Erica X.N. Li, Huijun Wang, and Gang Zhang
+  slides: 2024-06-CICM.pdf
+
+- venue: CESifo Conference on Macro, Money and International Finance
+  year: 2022
+  title: "Optimal Monetary Policy with Heterogeneous Agents: A Timeless Ramsey Approach"
+  authors: Eduardo Dávila and Andreas Schaab
+  slides: 2022-07-CESifo.pdf
+
+- venue: Paris December Finance Meeting
+  year: 2021
+  title: Firm Quality Dynamics and the Slippery Slope of Credit Intervention
+  authors: Wenhao Li and Ye Li
+  slides: 2021-12-ParisDecember.pdf
+
+- venue: New Zealand Finance Meeting
+  year: 2021
+  title: When Does the Fed Care about Stock Prices?
+  authors: Alexander Kurov, Eric Olson, and Gulnara R. Zaynutdinova
+  slides: 2021-12-NZFM.pdf
+
+- venue: FMA Annual Meeting
+  year: 2021
+  title: Two Investors, Two Trees, Two Goods
+  authors: Maxime Sauzet
+  slides: 2021-10-FMA.pdf
+
+- venue: German Finance Association (DGF)
+  year: 2021
+  title: Optimal Timing of Policy Interventions in Banking Crises
+  authors: Paul Mayer, Philipp Johann König, and David Pothier
+  slides: 2021-10-DGF.pdf
+
+- venue: SFI Research Days, Gerzensee
+  year: 2021
+  title: Safe Asset Carry Trade
+  authors: Benedikt Ballensiefen and Angelo Ranaldo
+  slides: 2021-06-SFI-Gerzensee.pdf
+
+- venue: Miami Winter Research Conference on Machine Learning and Business
+  year: 2021
+  title: Deep Learning in Asset Pricing
+  authors: Luyang Chen, Markus Pelger, and Jason Zhu
+  slides: 2021-02-Miami.pdf

@@ -1,0 +1,9 @@
+<div class="discussions">
+  {% for d in site.data.discussions %}
+  <p>
+    {{ d.venue }} ({{ d.year }}).
+    {% if d.title %}Discussion of “{{ d.title }}”{% if d.authors %} by {{ d.authors }}{% endif %}.{% endif %}
+    {% if d.slides %}<a href="{{ '/assets/pdf/discussions/' | append: d.slides | relative_url }}" target="_blank" rel="noopener noreferrer">slides</a>{% endif %}
+  </p>
+  {% endfor %}
+</div>
